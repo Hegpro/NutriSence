@@ -24,9 +24,17 @@ connect_args = {}
 if db_url.startswith("sqlite"):
     connect_args = {"check_same_thread": False}
 
+# Configure engine arguments
+engine_args = {
+    "connect_args": connect_args
+}
+if not db_url.startswith("sqlite"):
+    engine_args["pool_pre_ping"] = True
+    engine_args["pool_recycle"] = 300
+
 engine = create_engine(
     db_url,
-    connect_args=connect_args
+    **engine_args
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
