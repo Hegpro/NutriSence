@@ -1,0 +1,31 @@
+# Root Git Ignore for NutriSense
+
+# Python / Virtual Environment
+backend/.venv/
+backend/.env
+backend/nutrisense.db
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/agent/__pycache__/
+backend/app/auth/__pycache__/
+backend/app/database/__pycache__/
+backend/app/routes/__pycache__/
+backend/app/services/__pycache__/
+*.pyc
+
+# Next.js / Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/next-env.d.ts
+frontend/*.tsbuildinfo
+
+# OS Metadata
+.DS_Store
+Thumbs.db
